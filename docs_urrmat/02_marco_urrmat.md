@@ -1,6 +1,5 @@
-# 02 — Marco Normativo Nacional e Internacional
-
-> **Criterio evaluado:** 2.1.1 — Marco normativo nacional e internacional  
+# 02  Marco Normativo Nacional e Internacional
+  
 > **Nivel objetivo:** Destacado — Lista ≥ 4 normas aplicables con justificación textual referida a hechos concretos del caso.
 
 ---
