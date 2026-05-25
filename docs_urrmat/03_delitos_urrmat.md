@@ -1,7 +1,6 @@
-# 03 — Tipificación de Delitos Informáticos (Ley 21.459)
+# 03  Tipificación de Delitos Informáticos (Ley 21.459)
 
-> **Criterio evaluado:** 2.1.2 — Tipificación de delitos informáticos  
-> **Nivel objetivo:** Destacado — Cita ≥ 3 artículos de la Ley 21.459 con número e inciso, mapeando cada acción del atacante al artículo correspondiente.
+  
 
 ---
 
