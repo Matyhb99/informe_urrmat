@@ -1,4 +1,4 @@
-# 01 — Resumen Ejecutivo del Caso Equifax del 2017
+# 01  Resumen Ejecutivo del Caso Equifax del 2017
 
 ## Identificación del Caso
 
