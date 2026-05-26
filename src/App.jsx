@@ -1,122 +1,86 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
+import MarkdownPage from "./pages/MarkdownPage";
 
+import "./App.css";
+
+import resumen from "../docs_urrmat/01_resumen_urrmat.md?raw";
+import marco from "../docs_urrmat/02_marco_urrmat.md?raw";
+import delitos from "../docs_urrmat/03_delitos_urrmat.md?raw";
+import comparacion from "../docs_urrmat/04_comparacion_urrmat.md?raw";
+import responsabilidad from "../docs_urrmat/05_responsabilidad_urrmat.md?raw";
+import datos from "../docs_urrmat/06_datos_urrmat.md?raw";
+import conclusiones from "../docs_urrmat/07_conclusiones_urrmat.md?raw";
+import prompts from "../docs_urrmat/08_prompts_urrmat.md?raw";
+
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-lg">
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <BrowserRouter>
+      <div className="layout">
+        <Sidebar />
 
-      <div className="ticks"></div>
+        <div className="main-content">
+          <Navbar />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <Routes>
+            <Route
+              path="/"
+              element={<Navigate to="/resumen" />}
+            />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+            <Route
+              path="/resumen"
+              element={<MarkdownPage content={resumen} />}
+            />
+
+            <Route
+              path="/marco"
+              element={<MarkdownPage content={marco} />}
+            />
+
+            <Route
+              path="/delitos"
+              element={<MarkdownPage content={delitos} />}
+            />
+
+            <Route
+              path="/comparacion"
+              element={<MarkdownPage content={comparacion} />}
+            />
+
+            <Route
+              path="/responsabilidad"
+              element={
+                <MarkdownPage content={responsabilidad} />
+              }
+            />
+
+            <Route
+              path="/datos"
+              element={<MarkdownPage content={datos} />}
+            />
+
+            <Route
+              path="/conclusiones"
+              element={
+                <MarkdownPage content={conclusiones} />
+              }
+            />
+
+            <Route
+              path="/prompts"
+              element={<MarkdownPage content={prompts} />}
+            />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+  );
 }
-
-export default App
